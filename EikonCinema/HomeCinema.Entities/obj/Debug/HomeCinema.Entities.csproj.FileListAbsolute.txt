@@ -1,0 +1,4 @@
+C:\Users\vimalkumar\Desktop\EikonCinema\HomeCinema.Entities\bin\Debug\HomeCinema.Entities.dll
+C:\Users\vimalkumar\Desktop\EikonCinema\HomeCinema.Entities\bin\Debug\HomeCinema.Entities.pdb
+C:\Users\vimalkumar\Desktop\EikonCinema\HomeCinema.Entities\obj\Debug\HomeCinema.Entities.dll
+C:\Users\vimalkumar\Desktop\EikonCinema\HomeCinema.Entities\obj\Debug\HomeCinema.Entities.pdb

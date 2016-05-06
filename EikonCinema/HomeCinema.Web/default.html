@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<html ng-app="app">
+<head>
+    <title>Movie Search Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script data-require="angular.js@1.2.x" src="http://code.angularjs.org/1.2.1/angular.js" data-semver="1.2.1"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.js"></script>
+    <script src="Scripts/reference.js"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!--<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
+</head>
+<body>
+    <div class="container" ng-controller="SearchController" ng-init="init()">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading clearfix">
+                    <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Home Cinema Movies</h4>
+                    <div class="input-group">
+                        <input id="inputSearchMovies" type="search" ng-model="filterMovies" class="form-control shortInputSearch" placeholder="Filter, search movies..">
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary" ng-click="search();"><i class="glyphicon glyphicon-search"></i></button>
+                            <button class="btn btn-primary" ng-click="clearSearch();"><i class="glyphicon glyphicon-remove-sign"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="movie in items | filter:filterMovies">
+                            <div class="media">
+                                <a class="pull-left" ng-href="#/movies/{{movie.imdbID}}" title="View {{movie.Title}} details">
+                                    <img class="media-object" ng-click="openBox('#fancy')" width="80" height="120" ng-src="{{movie.Poster}}" alt="" />
+                                </a> <br />
+                                <strong>{{movie.Title}}</strong><br />
+                                <h6 class="media-heading">
+                                    {{movie.Type}}
+                                </h6>
+                            </div>
+                            <br /><br />
+                        </div>
+                    </div>
+                </div>            
+                
+                <div id="fancy" style="display:none">
+                    <div class="media-body">
+                        <a class="pull-left">
+                            <img class="media-object" width="80" height="120" ng-src="{{movie.Poster}}" alt="" />
+                        </a> <br />
+                        <h4 class="media-heading">{{movie.Title}}</h4>
+                        Year: <strong>{{movie.Year}}</strong>
+                        <br />
+                        Imdb: <strong>{{movie.imdbID}}</strong>
+                        <br />
+                        Type: <strong>{{movie.Type}}</strong>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

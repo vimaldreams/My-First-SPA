@@ -1,0 +1,35 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        Movie Information
+    </div>
+    <div class="panel-body">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>{{DisplayMovie.Title}} </h2>
+            </div>
+            <div class="panel-body">
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" height="120" ng-src="../../Content/images/movies/{{DisplayMovie.Image}}" alt="" />
+                    </a>
+                    <div class="media-body">
+                        <div>
+                            <strong>Release Year : </strong>{{DisplayMovie.ReleaseDate}}<br />
+                            <strong>Director: </strong>{{DisplayMovie.Director}}<br />
+                            <strong>Writer: </strong>{{DisplayMovie.Writer}}<br />
+                            <strong>Producer: </strong>{{DisplayMovie.Producer}}<br />
+                            <strong>Genre : </strong>{{DisplayMovie.Genre}}<br />
+                            <strong>Description : </strong>{{DisplayMovie.Description}}
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer clearfix">
+        <div class="pull-right">
+            <button type="button" class="btn btn-primary" ng-click="closeMovie()">Close</button>
+        </div>
+    </div>
+</div>
